@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blocode</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://unpkg.com/mxgraph/javascript/mxClient.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/codemirror.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/clike/clike.min.js"></script>
+</head>
+<body>
+    <input type="file" id="fileInput" style="display:none;" accept=".xml">
+    <!-- Toolbar -->
+    <div id="toolbar">
+
+    </div>
+
+    <!-- Graph Container -->
+    <div id="graphContainer">
+        <div id="gridContainer"></div>
+    </div>
+    <div class="side-window">
+        <div class="resizer"></div>
+        <h3>C++ Compiler</h3>
+        <div class="compiler-container">
+            <div id="codeEditor" class="editor"></div>
+            <textarea id="inputField" class="input" placeholder="Enter inputs here..." spellcheck="false"></textarea>
+            <button class="run-button" onclick="runCode()">Run</button>
+            <textarea class="output" id="outputConsole" placeholder="Output and prompts will appear here..." readonly></textarea>
+        </div>
+    </div>
+    <button class="toggle-button" onclick="toggleSidebar()">▶</button>
+
+    <!-- Script -->
+
+    <script src="parser.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="compiler.js"></script>
+
+</body>
+</html> 
